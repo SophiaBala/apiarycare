@@ -1,0 +1,65 @@
+/* Bottom Navbar */
+.container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 12px 0;
+  background: #ffffff;
+
+  border-top: 1px solid #e5e5e5;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+
+  z-index: 1000;
+}
+
+/* Logo */
+.logo-container {
+  display: none; /* ховаємо логотип для нижньої навігації */
+}
+
+/* Menu */
+.container ul {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Items */
+.container ul li {
+  position: relative;
+}
+
+/* Links */
+.container ul li a {
+  text-decoration: none;
+  color: #6b7280;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+/* Active state */
+.container ul li.active a {
+  color: #2f855a;
+}
+
+/* Active underline */
+.container ul li.active::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #2f855a;
+  border-radius: 50%;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
