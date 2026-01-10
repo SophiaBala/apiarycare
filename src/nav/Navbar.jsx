@@ -13,7 +13,7 @@ const Navbar = () => {
         </div>
 
         <ul>
-            <li className={location.pathname === "/" ? "active" : ""}>
+            <li className={location.pathname === "/" || "/new-hive" || "apiary"? "active" : ""}>
             <Link to="/">Пасіка</Link>
             </li>
 

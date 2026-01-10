@@ -1,62 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./HomePage.css";
-
-//////////// ДОДАНІ ВУЛИКИ
-const initialHives = [
-    { name: "Hive Alpha", status: "Excellent", presence: "Present", honey: 12, date: "Jan 2", statusColor: "bg-green-500" },
-    { name: "Hive Beta", status: "Good", presence: "Present", honey: 8, date: "Dec 28", statusColor: "bg-green-400" },
-    { name: "Hive Gamma", status: "Fair", presence: "Unknown", honey: 3, date: "Dec 20", statusColor: "bg-yellow-400" },
-];
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
+    const navigate = useNavigate();
     const [search, setSearch] = useState("");
-    const [hives, setHives] = useState(initialHives);
+    const [apiaries, setApiaries] = useState([]);
+
+    useEffect(() => {
+        const saved = JSON.parse(localStorage.getItem("apiaries"));
+        if (saved && saved.length) {
+        setApiaries(saved);
+        }
+    }, []);
+
+    const filtered = apiaries.filter((a) =>
+        a.name.toLowerCase().includes(search.toLowerCase())
+    );
 
     const addHive = () => {
         const newHive = {
-        name: `Hive ${hives.length + 1}`,
-        status: "New",
-        presence: "Unknown",
+        id: Date.now(),
+        name: `Пасіка ${apiaries.length + 1}`,
+        status: "Нова",
         honey: 0,
-        date: new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" }),
-        statusColor: "bg-gray-400",
+        date: new Date().toLocaleDateString("en-GB"),
+        statusColor: "status-new",
         };
-        setHives([newHive, ...hives]);
-    };
 
-    const filteredHives = hives.filter(hive =>
-        hive.name.toLowerCase().includes(search.toLowerCase())
-    );
+        const updated = [newHive, ...apiaries];
+        setApiaries(updated);
+        localStorage.setItem("apiaries", JSON.stringify(updated));
+    };
 
     return (
         <div className="homepage">
-            <div className="search-add">
-                <input
-                type="text"
-                placeholder="Search hives..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                />
-                <button onClick={addHive}>+</button>
-            </div>
+        <div className="search-add">
+            <input
+            placeholder="Пошук пасік..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            />
+            <button onClick={addHive}>+</button>
+        </div>
 
-            <div className="hive-grid">
-                {filteredHives.map((hive, idx) => (
+        <div className="hive-grid">
+            {filtered.length > 0 ? (
+            filtered.map((apiary) => (
                 <div
-                    key={idx}
-                    className="hive-card"
-                    onClick={() => alert(`Navigate to ${hive.name} page`)}
+                key={apiary.id}
+                className="apiary-card"
+                onClick={() => navigate(`/apiary/${apiary.id}`)}
                 >
-                    <h2>{hive.name}</h2>
-                    <span className={`hive-status ${hive.statusColor}`}>{hive.status}</span>
-                    <div className="hive-info">
-                    <span>👑 {hive.presence}</span>
-                    <span>🍯 {hive.honey} kg</span>
-                    <span>📅 {hive.date}</span>
-                    </div>
+                <div className="apiary-top">
+                    <img src="/hive.png" alt="Hive" className="apiary-img" />
+                    <span className={`hive-status ${apiary.statusColor}`}>
+                    {apiary.status}
+                    </span>
                 </div>
-                ))}
-            </div>
+
+                <h2>{apiary.name}</h2>
+
+                <div className="hive-info">
+                    <span>🍯 {apiary.honey} кг</span>
+                    <span>{apiary.date}</span>
+                </div>
+                </div>
+            ))
+            ) : (
+            <p className="empty-text">Поки що немає пасік. Додайте нову!</p>
+            )}
+        </div>
         </div>
     );
 }

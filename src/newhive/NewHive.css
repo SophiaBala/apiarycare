@@ -1,0 +1,175 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #319795;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.add-hive-page {
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    background: #319795;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: spa;
+    padding: 10px 10px;
+    background: #fff;
+    border-bottom: 1px solid #D1D5DB;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.apiary-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+.back-btn,
+.edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button-img {
+    width: 22px;
+    height: 22px;
+    opacity: 0.8;
+}
+
+.form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    margin: 16px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.photo-block {
+    width: 100%;
+    height: 160px;
+    border-radius: 16px;
+    background: #F3F4F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.photo-placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    color: #6B7280;
+}
+
+.photo-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: #38B2AC;
+    padding: 10px 16px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.photo-btn:hover {
+    background: #319795;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #1F2937;
+    gap: 6px;
+    font-weight: 500;
+}
+
+input,
+select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #D1D5DB;
+    font-size: 14px;
+    outline: none;
+    background: #F3F4F6;
+    color: #1F2937;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: #38B2AC;
+    box-shadow: 0 0 0 3px rgba(56,178,172,0.3); 
+}
+
+.orientation p {
+    color: #1F2937;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.orientation-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.orientation-buttons button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid #38B2AC;
+    background: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    color:#1F2937;
+    transition: all 0.2s;
+}
+
+.orientation-buttons button.active {
+    background: #38B2AC;
+    color: #fff;
+    border-color: #319795;
+}
+
+.save-btn {
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: #F6C453;
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #E0AD2F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

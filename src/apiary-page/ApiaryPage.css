@@ -1,0 +1,186 @@
+:root {
+    --green-main: #2F855A;
+    --green-accent: #38B2AC;
+    --honey-yellow: #F6C453;
+    --brown-main: #6A4F4F;
+    --white: #FFFFFF;
+    --gray-bg: #F9FAFB;
+    --gray-card: #F3F4F6;
+    --gray-border: #E5E7EB;
+    --gray-text: #6B7280;
+    --text-dark: #1F2937;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: var(--gray-bg);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Сторінка */
+.apiary-page {
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    background: linear-gradient(180deg, #5eab85 30%, #38B2AC 600px);
+}
+
+/* Верхня панель */
+.top-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid var(--gray-border);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.apiary-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--brown-main);
+    margin: 0;
+}
+
+.back-btn,
+.edit-btn {
+    width: 50px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.button-img {
+    width: 10px;
+    height: 10px;
+    opacity: 0.85;
+}
+
+/* Нотатки */
+.notes {
+    margin: 16px;
+    background: #fff;
+    padding: 14px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.notes h2 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+}
+
+.notes textarea {
+    width: 93%;
+    height: 70px;
+    padding: 10px;
+    border-radius: 12px;
+    border: 1px solid var(--gray-border);
+    resize: none;
+    font-size: 14px;
+    background: var(--gray-card);
+    outline: none;
+}
+
+.notes textarea:focus {
+    border-color: var(--green-accent);
+    box-shadow: 0 0 0 3px rgba(56,178,172,0.25);
+}
+
+/* Вулики */
+.hives {
+    margin: 16px;
+    color: #fff;
+}
+
+.hives-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.hives-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark);
+    color: #fff;
+}
+
+/* Кнопка додати */
+.add-hive-btn {
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    background: var(--green-accent);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.add-hive-btn:hover {
+    background: #319795;
+    transform: translateY(-1px);
+}
+
+/* Список вуликів */
+.hives-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Картка вулика */
+.hive-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px;
+    background: var(--white);
+    border-radius: 16px;
+    border: 1px solid var(--gray-border);
+    cursor: pointer;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hive-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.hive-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.hive-rating {
+    font-size: 13px;
+    color: var(--gray-text);
+    margin-top: 2px;
+}
+
+/* Фото вулика */
+.hive-img {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    object-fit: cover;
+    background: var(--gray-card);
+}
