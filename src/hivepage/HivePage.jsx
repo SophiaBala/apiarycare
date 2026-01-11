@@ -68,7 +68,7 @@ export default function HivePage() {
                 <img src={backarrow} className="button-img" />
             </button>
             <h1>{hive.hiveName}</h1>
-            </header>
+        </section>
 
         <section className="hive-hero">
             <img src={hive.photo || hiveImg} alt="Вулик" />
