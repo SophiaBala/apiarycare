@@ -4,6 +4,10 @@ import Navbar from "./nav/Navbar";
 import ApiaryPage from "./apiary-page/ApiaryPage";
 import NewHive from "./newhive/NewHive";
 import HivePage from "./hivepage/HivePage";
+import Harvest from "./harvest/Harvest";
+import AddHarvest from "./harvest/AddHarvest";
+import Queen from "./queen/Queen";
+import Profile from "./profile/Profile";
 
 const App = () => {
   return (
@@ -14,6 +18,10 @@ const App = () => {
       <Route path="/new-hive" element={<NewHive />} />
       <Route path="/new-hive/:apiaryId" element={<NewHive />} />
       <Route path="/hive/:apiaryId/:hiveId" element={<HivePage />} />
+      <Route path="/harvest" element={<Harvest />} />
+      <Route path="/harvest/add" element={<AddHarvest />} />
+      <Route path="/queen" element={<Queen />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
     <Navbar/>
     </>

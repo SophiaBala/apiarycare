@@ -20,15 +20,13 @@ export default function HivePage() {
 
     return (
         <div className="hive-page">
-        {/* Header */}
-        <header className="top-bar">
+            <header className="top-bar">
             <button onClick={() => navigate(-1)} className="back-btn">
-            <img src={backarrow} alt="Назад" />
+                <img src={backarrow} className="button-img" />
             </button>
             <h1>{hive.hiveName}</h1>
-        </header>
+            </header>
 
-        {/* Hero */}
         <section className="hive-hero">
             <img src={hive.photo || hiveImg} alt="Вулик" />
             <div className="hero-info">
@@ -37,20 +35,19 @@ export default function HivePage() {
             </div>
         </section>
 
-        {/* GRID */}
         <section className="info-grid">
 
-            <div className="info-card">
+            <div className="info-card wide soft" onClick={() => navigate("/harvest")}>
             <b>Зібраний мед</b>
             <p className="honey">🍯 {hive.honeyCollected || 0} кг</p>
             </div>
 
-            <div className="info-card">
+            <div className="info-card wide soft" onClick={() => navigate("/queen")}>
             <b>Королева</b>
             <p className="muted">{hive.queen || "Немає даних"}</p>
             </div>
 
-            <div className="info-card">
+            {/* <div className="info-card">
             <b>Годування</b>
             <p className="muted">{hive.feeding || "Не проводилось"}</p>
             </div>
@@ -58,7 +55,7 @@ export default function HivePage() {
             <div className="info-card">
             <b>Здоровʼя</b>
             <p className="muted">{hive.health || "Без зауважень"}</p>
-            </div>
+            </div> */}
 
             <div className="info-card wide soft">
             <b>Інспекції</b>

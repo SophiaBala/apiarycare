@@ -13,15 +13,15 @@ const Navbar = () => {
         </div>
 
         <ul>
-            <li className={location.pathname === "/" || "/new-hive" || "apiary"? "active" : ""}>
+            <li className={["/", "/new-hive", "/apiary"].includes(location.pathname)? "active" : ""}>
             <Link to="/">Пасіка</Link>
             </li>
 
-            <li className={location.pathname === "/stats" ? "active" : ""}>
+            <li className={["/stats"].includes(location.pathname)? "active" : ""}>
             <Link to="/stats">Статистика</Link>
             </li>
 
-            <li className={location.pathname === "/profile" ? "active" : ""}>
+            <li className={["/profile"].includes(location.pathname)? "active" : ""}>
             <Link to="/profile">Кабінет</Link>
             </li>
         </ul>
