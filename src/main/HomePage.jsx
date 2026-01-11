@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./HomePage.css";
 import { useNavigate } from "react-router-dom";
 import defaultHiveImg from "../assets/hive.png"; 
+import apiaryImg from "../assets/apiary.png";
 
 export default function HomePage() {
     const navigate = useNavigate();
@@ -83,4 +84,56 @@ export default function HomePage() {
             </div>
         </div>
     );
+}
+    <div className="homepage">
+        <div className="search-add">
+            <input
+                placeholder="Пошук пасік..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+            />
+            <button onClick={addHive}>+</button>
+        </div>
+
+        <div className="hive-grid">
+            {filtered.length > 0 ? (
+                filtered.map((apiary) => (
+                    <div
+                        key={apiary.id}
+                        className="apiary-card"
+                        onClick={() => navigate(`/apiary/${apiary.id}`)}
+                    >
+                        <img
+                            src={apiaryImg}
+                            alt="Hive"
+                            className="apiary-bg"
+                        />
+
+                        <div className="apiary-overlay">
+                            <div className="apiary-top">
+                                <span
+                                    className={`hive-status ${apiary.statusColor}`}
+                                >
+                                    {apiary.status}
+                                </span>
+                            </div>
+
+                            <h2>{apiary.name}</h2>
+
+                            <div className="hive-info">
+                                <span>🍯 {apiary.honey} кг</span>
+                                <span>{apiary.date}</span>
+                            </div>
+                        </div>
+                    </div>
+                ))
+            ) : (
+                <p className="empty-text">
+                    Поки що немає пасік. Додайте нову!
+                </p>
+            )}
+        </div>
+    </div>
+);
+
 }

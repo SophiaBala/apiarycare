@@ -42,11 +42,11 @@ export default function ApiaryPage() {
             <section className="hives">
                 <div className="hives-header">
                     <h2>Вулики ({hives.length})</h2>
-                    <button
+                    <label
                         className="add-hive-btn"
                         onClick={() => navigate(`/new-hive/${id}`)}
                         >+
-                    </button>
+                    </label>
                 </div>
 
                 <div className="hives-list">

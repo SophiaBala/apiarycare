@@ -12,7 +12,7 @@ body {
     padding: 16px;
     padding-bottom: 120px;
     box-sizing: border-box;
-    background: linear-gradient(180deg, #5eab85 30%, #38B2AC 600px);
+    background: linear-gradient(180deg, #38B2AC 30%, #38B2AC 600px);
     font-family: sans-serif;
 }
 
@@ -47,59 +47,84 @@ body {
     cursor: pointer;
 }
 
-/* ===== СПИСОК ПАСІК ===== */
 .hive-grid {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-/* ===== КАРТКА ===== */
 .apiary-card {
-    background: #ffffff;
+    position: relative;
+    height: 180px;
     border-radius: 18px;
-    padding: 16px;
-    border: 1px solid #d1fae5;
+    overflow: hidden;
     cursor: pointer;
 
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .apiary-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== ВЕРХ КАРТКИ ===== */
+.apiary-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+.apiary-card:hover .apiary-bg {
+    opacity: 0.55;
+}
+
+.apiary-overlay {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: linear-gradient(
+        to top,
+        rgba(56, 178, 172, 0.95) 10%,
+        rgba(255, 255, 255, 0.7) 55%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+}
+
 .apiary-top {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-end;
 }
 
-.apiary-img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-}
-
-/* ===== НАЗВА ===== */
 .apiary-card h2 {
     margin: 0;
-    font-size: 16px;
+    padding: 6px 6px;
+    align-self: flex-start;
+
+    /* background: rgba(255, 255, 255, 0.7); */
+    border-radius: 10px;
+
+    font-size: 19px;
     font-weight: 600;
     color: #065f46;
+
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); */
 }
 
-/* ===== СТАТУС ===== */
 .hive-status {
-    font-size: 12px;
-    padding: 4px 12px;
+    font-size: 11px;
+    padding: 4px 10px;
     border-radius: 999px;
     font-weight: 500;
 }
@@ -124,13 +149,28 @@ body {
     color: #155e75;
 }
 
-/* ===== ІНФОРМАЦІЯ ===== */
 .hive-info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+    gap: 160px;
+    padding: 12px 0px;
+
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: 12px;
+
+    width: calc(100% + 24px);
+
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0 0 18px 18px;
+
     font-size: 13px;
-    color: #4b5563;
+    color: #374151;
+
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.06);
 }
+
 
 /* ===== ПУСТО ===== */
 .empty-text {

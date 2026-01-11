@@ -1,0 +1,113 @@
+/* Базовий стиль */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #319795;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+}
+
+.profile-page {
+    width: 100vw;
+    min-height: 100vh;
+    padding-bottom: 120px;
+    background: #319795;
+}
+
+/* Верхня панель */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.profile-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+    margin: 0;
+}
+
+/* Форма */
+.profile-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    margin: 16px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    color: #000;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #1F2937;
+    gap: 6px;
+    font-weight: 500;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid #D1D5DB;
+    font-size: 14px;
+    outline: none;
+    background: #F3F4F6;
+    color: #1F2937;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: #38B2AC;
+    box-shadow: 0 0 0 3px rgba(56,178,172,0.3); 
+}
+
+/* Блок сповіщень */
+.notifications-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-btn {
+    padding: 10px 20px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #fff;
+}
+
+.notification-btn.on {
+    background: #38B2AC;
+}
+
+.notification-btn.off {
+    background: #E53E3E;
+}
+
+/* Кнопка збереження */
+.save-btn {
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    background: #F6C453;
+    color: #1F2937;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    background: #E0AD2F;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}

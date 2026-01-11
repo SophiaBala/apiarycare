@@ -4,6 +4,7 @@ html, body {
     width: 100%;
     background: #319795;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow:auto;
 }
 
 .add-hive-page {
@@ -29,8 +30,10 @@ html, body {
 .apiary-title {
     font-size: 17px;
     font-weight: 600;
-    color: #000;
+    color: #285453;
     margin: 0;
+    text-align: center;
+    flex-grow: 1;
 }
 
 .back-btn,
@@ -86,13 +89,13 @@ html, body {
     position: absolute;
     bottom: 10px;
     right: 10px;
-    background: #38B2AC;
+    background: #F6C453;
     padding: 10px 16px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    color: #fff;
+    color: #000;
     transition: all 0.2s ease;
 }
 

@@ -64,6 +64,41 @@ export default function HivePage() {
                     <b className="stat-label">Здоровʼя</b>
                     <p className="stat-value">{lastData.health || "Без зауважень"}</p>
                 </div>
+            <button onClick={() => navigate(-1)} className="back-btn">
+                <img src={backarrow} className="button-img" />
+            </button>
+            <h1>{hive.hiveName}</h1>
+            </header>
+
+        <section className="hive-hero">
+            <img src={hive.photo || hiveImg} alt="Вулик" />
+            <div className="hero-info">
+            <span>{hive.breed}</span>
+            <span>{hive.hiveType}</span>
+            </div>
+        </section>
+
+        <section className="info-grid">
+
+            <div className="info-card wide soft" onClick={() => navigate("/harvest")}>
+            <b>Зібраний мед</b>
+            <p className="honey">🍯 {hive.honeyCollected || 0} кг</p>
+            </div>
+
+            <div className="info-card wide soft" onClick={() => navigate("/queen")}>
+            <b>Королева</b>
+            <p className="muted">{hive.queen || "Немає даних"}</p>
+            </div>
+
+            {/* <div className="info-card">
+            <b>Годування</b>
+            <p className="muted">{hive.feeding || "Не проводилось"}</p>
+            </div>
+
+            <div className="info-card">
+            <b>Здоровʼя</b>
+            <p className="muted">{hive.health || "Без зауважень"}</p>
+            </div> */}
 
                 <div className="info-card wide soft">
                     <b className="stat-label">Інспекції</b>
