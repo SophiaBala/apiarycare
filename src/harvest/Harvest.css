@@ -140,6 +140,14 @@ html, body {
     color: #1F2937;
 }
 
-.form{
+.form-addharvest{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: #fff;
+    margin: 16px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     margin-top: 45%;
 }

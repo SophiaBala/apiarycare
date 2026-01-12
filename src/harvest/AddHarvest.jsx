@@ -37,7 +37,7 @@ export default function AddHarvest() {
                 <p className="harvest-title">Додати запис</p>
             </header>
 
-            <div className="form">
+            <div className="form-addharvest">
                 <label>
                     Мед (кг)
                     <input
