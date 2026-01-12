@@ -75,7 +75,7 @@ export default function NewHive() {
                 <button className="edit-btn"></button>
             </header>
 
-            <form className="form" onSubmit={handleSubmit}>
+            <form className="form-newhive" onSubmit={handleSubmit}>
                 <div className="photo-block">
                     {photo ? (
                         <img src={photo} className="photo-preview" />
